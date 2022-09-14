@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StopAppAPI.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -27,7 +28,7 @@ namespace StopAppAPI.Repository
         void RemovebyWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict);
 
         void RemoveRangeBywhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict);
-
+        IQueryable<Product> GetFirstofDefaultByParameter(int productId);
         void InactiveAndDeleteMarkbyWhereCluase(Expression<Func<Tbl_Entity, bool>> wherePredict, Action<Tbl_Entity> ForEachPredict);
 
         Tbl_Entity GetFirstofDefaultByParameter(Expression<Func<Tbl_Entity, bool>> wherePredict);

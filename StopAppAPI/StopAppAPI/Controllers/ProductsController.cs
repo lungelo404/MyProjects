@@ -24,17 +24,14 @@ namespace StopAppAPI.Controllers
             return _unitOfWork.GetRepositoryInstance<Product>().GetProductIQueryalbe();
         }
 
+
+      
         // GET: api/Products/5
         [ResponseType(typeof(Product))]
-        public IHttpActionResult GetProduct(int id)
+        public IHttpActionResult GetProduct(int productId)
         {
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(product);
+            return (IHttpActionResult)_unitOfWork.GetRepositoryInstance<Product>().GetFirstofDefaultByParameter(productId);
+          
         }
 
         // PUT: api/Products/5

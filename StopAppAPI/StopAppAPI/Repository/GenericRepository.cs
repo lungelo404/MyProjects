@@ -50,6 +50,11 @@ namespace StopAppAPI.Repository
 
         }
 
+        public IQueryable<Product> GetFirstofDefaultByParameter(int productId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Tbl_Entity GetFirstorDefault(int recordId)
         {
             return _dbSet.Find(recordId);

@@ -20,7 +20,10 @@ namespace StoreAppWeb.Models
         public Nullable<System.DateTime> Discription { get; set; }
         public Nullable<decimal> Price { get; set; }
 
-       
+        public ProductModelView()
+        {
+            List<ProductModelView> products = new List<ProductModelView>();
+        }
       
     }
 }
